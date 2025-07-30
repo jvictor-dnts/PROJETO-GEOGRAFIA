@@ -1,0 +1,154 @@
+:root {
+  --primary: #1abc9c;
+  --secondary: #232b2b;
+  --accent: #f39c12;
+  --bg: #f6f6f6;
+  --white: #fff;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--secondary);
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin: 0;
+}
+header {
+  background: var(--primary);
+  color: var(--white);
+  padding: 2rem 1rem 1rem 1rem;
+  text-align: center;
+  position: relative;
+}
+header img {
+  width: 70px;
+  vertical-align: middle;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 3px solid var(--accent);
+  background: var(--white);
+}
+header h1 {
+  margin: 0.5rem 0 0 0;
+  font-size: 2.2rem;
+}
+header p {
+  margin: 0.5rem 0 0 0;
+  font-size: 1.1rem;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+nav button {
+  background: var(--secondary);
+  color: var(--white);
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+nav button.active, nav button:hover {
+  background: var(--accent);
+  color: var(--secondary);
+}
+main {
+  max-width: 900px;
+  margin: 2rem auto 3rem auto;
+  background: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  padding: 2rem;
+}
+section {
+  margin-bottom: 2.5rem;
+  display: none;
+  animation: fadeIn 0.6s;
+}
+section.active { display: block; }
+h2 {
+  color: var(--primary);
+  margin-top: 0;
+}
+.carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem 0;
+}
+.carousel img {
+  max-width: 100%;
+  max-height: 250px;
+  border-radius: 10px;
+  border: 2px solid var(--primary);
+  background: var(--white);
+}
+.carousel-controls {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+.carousel-controls button {
+  background: var(--primary);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.carousel-controls button:hover {
+  background: var(--accent);
+  color: var(--secondary);
+}
+.whatsapp-effect {
+  position: relative;
+  padding-left: 50px;
+  min-height: 50px;
+}
+.whatsapp-effect img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 45px;
+  filter: drop-shadow(0 2px 4px rgba(30,150,50,0.3));
+}
+.whatsapp-msg {
+  background: #25d366;
+  color: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 15px 15px 15px 0;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  display: inline-block;
+  animation: floatMsg 1.2s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px);}
+  to { opacity: 1; transform: none;}
+}
+@keyframes floatMsg {
+  from { transform: translateY(30px) scale(0.8); opacity: 0;}
+  to { transform: none; opacity: 1;}
+}
+@media (max-width: 600px) {
+  main { padding: 1rem;}
+  h1 { font-size: 1.3rem;}
+  .carousel img { max-height: 160px;}
+  .whatsapp-effect img { width: 35px;}
+  nav {flex-direction: column;}
+  nav button { width: 100%; margin-bottom: 7px;}
+}
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #222;
+  color: #fff;
+  font-size: 0.9rem;
+}
