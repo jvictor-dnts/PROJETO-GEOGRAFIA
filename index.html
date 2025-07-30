@@ -3,86 +3,80 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Uma Outra Globalização & Crítica às Redes Sociais</title>
+  <title>Outra Globalização & Redes Sociais</title>
   <link href="https://fonts.googleapis.com/css?family=Montserrat:700,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <img src="https://cdn-icons-png.flaticon.com/512/235/235861.png" alt="Globo">
-    <h1>Uma Outra Globalização</h1>
-    <p>Repensando o mundo conectado & criticando as redes sociais</p>
+    <div class="header-logo">
+      <img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" alt="WhatsApp">
+      <span>Refletindo a Globalização</span>
+    </div>
     <nav>
-      <button class="active" data-section="globalizacao">Globalização</button>
-      <button data-section="critica">Crítica às Redes Sociais</button>
-      <button data-section="imagens">Imagens</button>
+      <button class="active" data-section="globalizacao"><span>🌍</span> Globalização</button>
+      <button data-section="critica"><span>💬</span> Redes Sociais</button>
+      <button data-section="imagens"><span>🖼️</span> Imagens</button>
     </nav>
   </header>
   <main>
     <section id="globalizacao" class="active">
-      <h2>O que é uma outra globalização?</h2>
+      <h1>Uma Outra Globalização</h1>
       <p>
-        Defendemos uma globalização mais justa, inclusiva e plural, onde o respeito às culturas locais, à diversidade e à cooperação entre os povos estejam acima dos interesses puramente econômicos.
+        Defendemos uma globalização mais justa, humana e sustentável, onde diferentes vozes e culturas se encontram sem perder sua identidade. Não basta conectar: é preciso incluir, valorizar e proteger.
       </p>
-      <ul>
-        <li>Valorização das identidades regionais</li>
-        <li>Distribuição equitativa das oportunidades</li>
-        <li>Colaboração entre nações</li>
-        <li>Respeito ao meio ambiente e aos direitos humanos</li>
+      <ul class="checks">
+        <li>🌱 Diversidade cultural acima do lucro</li>
+        <li>🤝 Cooperação para o bem comum</li>
+        <li>🌎 Respeito ao meio ambiente e direitos humanos</li>
+        <li>📚 Informação acessível e confiável</li>
       </ul>
       <div class="carousel">
-        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Mãos Unidas pelo Globo" id="carousel-img">
+        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Mãos Unidas" id="carousel-img">
         <div class="carousel-controls">
-          <button id="prev-img">&#8592;</button>
-          <button id="next-img">&#8594;</button>
+          <button id="prev-img" aria-label="Imagem anterior">&#8678;</button>
+          <button id="next-img" aria-label="Próxima imagem">&#8680;</button>
         </div>
         <small id="carousel-caption">Mãos de diferentes culturas unidas pelo mundo.</small>
       </div>
     </section>
     <section id="critica">
-      <h2>Crítica às Redes Sociais: O caso do WhatsApp</h2>
-      <div class="whatsapp-effect">
-        <img src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-1-1.png" alt="WhatsApp Logo">
-        <div class="whatsapp-msg">Nem tudo que viraliza é verdade! Atenção às fake news.</div>
+      <h1>Redes Sociais & WhatsApp: O Outro Lado</h1>
+      <div class="whatsapp-bubble">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" class="whats-icon">
+        <span class="whats-msg" id="whats-msg">Nem tudo que viraliza é verdade!</span>
       </div>
-      <p>
-        O WhatsApp e outras redes sociais são exemplos de como a globalização digital pode aproximar pessoas, mas também gerar problemas:
-      </p>
-      <ul>
-        <li>
-          <strong>Desinformação e Fake News:</strong> Mensagens se espalham rapidamente, dificultando a checagem dos fatos.
-        </li>
-        <li>
-          <strong>Homogeneização cultural:</strong> Conteúdos globais padronizados muitas vezes sufocam as culturas locais.
-        </li>
-        <li>
-          <strong>Privacidade ameaçada:</strong> Dados pessoais são constantemente coletados e utilizados sem o devido controle.
-        </li>
-        <li>
-          <strong>Manipulação de opiniões:</strong> Grupos e algoritmos podem influenciar decisões políticas e sociais.
-        </li>
-      </ul>
-      <div>
-        <button onclick="alert('Seja crítico! Busque fontes confiáveis e diversifique seus canais de informação.')"
-          style="background: #25d366; color: #fff; border-radius: 7px; border:none; padding:0.7rem 1.2rem; margin:1rem 0; font-weight:600;">
-          Dica: Como se proteger das Fake News?
-        </button>
+      <div class="critica-list">
+        <div class="critica-item">
+          <strong>🚨 Fake News:</strong> O WhatsApp facilita a circulação de boatos e mentiras, que podem afetar eleições, saúde e convivência.
+        </div>
+        <div class="critica-item">
+          <strong>🤖 Algoritmos:</strong> Você vê o que o app quer mostrar, não o que é mais importante ou verdadeiro.
+        </div>
+        <div class="critica-item">
+          <strong>🔒 Privacidade:</strong> Seus dados e hábitos podem ser usados para te manipular ou vender produtos.
+        </div>
+        <div class="critica-item">
+          <strong>🗣️ Homogeneização:</strong> A cultura local é engolida pela cultura global, tornando tudo igual e descartável.
+        </div>
       </div>
+      <button class="tip-btn" onclick="showTip()">Como se proteger das Fake News?</button>
+      <div id="tip-box" class="tip-box">Desconfie! Sempre cheque a fonte antes de compartilhar. Use serviços de checagem de fatos e não acredite em tudo que recebe, mesmo de conhecidos.</div>
     </section>
     <section id="imagens">
-      <h2>Imagens Ilustrativas</h2>
-      <div style="display:flex; flex-wrap:wrap; gap:15px; justify-content:center;">
-        <div style="flex:1 1 150px; min-width:140px; max-width:250px; text-align:center;">
-          <img src="https://cdn.pixabay.com/photo/2017/01/20/00/30/world-1991217_960_720.png" alt="Mapa Global" style="width:100%; border-radius:10px;">
-          <small>Mapa da interconexão global</small>
+      <h1>Galeria Ilustrativa</h1>
+      <div class="galeria">
+        <div class="img-card">
+          <img src="https://cdn.pixabay.com/photo/2017/01/20/00/30/world-1991217_960_720.png" alt="Mapa Global">
+          <div class="img-desc">Mapa da interconexão global</div>
         </div>
-        <div style="flex:1 1 150px; min-width:140px; max-width:250px; text-align:center;">
-          <img src="https://cdn.pixabay.com/photo/2017/08/06/00/03/fake-2581741_960_720.jpg" alt="Fake News" style="width:100%; border-radius:10px;">
-          <small>Fake News: perigo das redes sociais</small>
+        <div class="img-card">
+          <img src="https://cdn.pixabay.com/photo/2017/08/06/00/03/fake-2581741_960_720.jpg" alt="Fake News">
+          <div class="img-desc">Fake News: perigo das redes sociais</div>
         </div>
-        <div style="flex:1 1 150px; min-width:140px; max-width:250px; text-align:center;">
-          <img src="https://cdn.pixabay.com/photo/2015/09/18/21/20/africa-942788_960_720.jpg" alt="Diversidade" style="width:100%; border-radius:10px;">
-          <small>Diversidade e respeito entre culturas</small>
+        <div class="img-card">
+          <img src="https://cdn.pixabay.com/photo/2015/09/18/21/20/africa-942788_960_720.jpg" alt="Diversidade">
+          <div class="img-desc">Diversidade e respeito entre culturas</div>
         </div>
       </div>
     </section>

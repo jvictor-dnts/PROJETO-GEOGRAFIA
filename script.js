@@ -1,4 +1,3 @@
-
 const navBtns = document.querySelectorAll('nav button');
 const sections = document.querySelectorAll('main section');
 navBtns.forEach(btn => {
@@ -37,8 +36,7 @@ document.getElementById('next-img').onclick = function() {
   carouselIndex = (carouselIndex + 1) % carouselImgs.length;
   updateCarousel();
 };
-
-const carouselEl = document.querySelector('.carousel img');
+const carouselEl = document.getElementById('carousel-img');
 let startX = 0;
 carouselEl.addEventListener('touchstart', e => {
   startX = e.touches[0].clientX;
@@ -49,16 +47,31 @@ carouselEl.addEventListener('touchend', e => {
   else if (dx < -40) document.getElementById('next-img').click();
 });
 
-setInterval(() => {
-  const msgs = [
-    "Nem tudo que viraliza é verdade! Atenção às fake news.",
-    "Desconfie de correntes suspeitas.",
-    "Verifique sempre a fonte antes de compartilhar.",
-    "Redes sociais: use com consciência!",
-    "Proteja sua privacidade online."
-  ];
-  const msgDiv = document.querySelector('.whatsapp-msg');
-  msgDiv.textContent = msgs[Math.floor(Math.random() * msgs.length)];
-}, 3500);
+const whatsMsgs = [
+  "Nem tudo que viraliza é verdade!",
+  "Desconfie de correntes suspeitas.",
+  "Verifique sempre a fonte antes de compartilhar.",
+  "Redes sociais: use com consciência!",
+  "Proteja sua privacidade online.",
+  "Cuidado com notícias emocionais demais.",
+  "Compartilhe responsabilidade, não fake news!"
+];
+function trocaMensagemWhats() {
+  const msgDiv = document.getElementById('whats-msg');
+  let idx = Math.floor(Math.random() * whatsMsgs.length);
+  msgDiv.textContent = whatsMsgs[idx];
+}
+setInterval(trocaMensagemWhats, 3200);
+
+function showTip() {
+  const tip = document.getElementById('tip-box');
+  if (tip.style.display === "block") {
+    tip.style.display = "none";
+  } else {
+    tip.style.display = "block";
+    setTimeout(()=>{ tip.style.display = "none"; }, 6000);
+  }
+}
+window.showTip = showTip; 
 
 updateCarousel();
