@@ -1,258 +1,164 @@
-:root {
-  --whats-green: #25D366;
-  --whats-dark: #075E54;
-  --whats-mid: #128C7E;
-  --accent-yellow: #F7EB4C;
-  --light-bg: #ECE5DD;
-  --white: #fff;
-  --gray: #dadada;
-  --text-dark: #222;
-}
 
-* { box-sizing: border-box; }
+    :root {
+      --bg-main: #121b22;
+      --bg-section: #1e2c33;
+      --text-primary: #e9edef;
+      --text-secondary: #aebac1;
+      --highlight: #25d366;
+      --button-bg: #25d366;
+      --button-text: #fff;
+      --border-radius: 10px;
+    }
 
-body {
-  background: var(--light-bg);
-  color: var(--text-dark);
-  font-family: 'Montserrat', Arial, sans-serif;
-  margin: 0;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
 
-header {
-  background: var(--whats-dark);
-  color: var(--white);
-  padding: 1.5rem 1rem 1rem 1rem;
-  text-align: center;
-  border-bottom: 5px solid var(--whats-green);
-}
-.header-logo {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.6rem;
-  font-weight: bold;
-  gap: 0.7rem;
-  margin-bottom: 0.5rem;
-}
-.header-logo img {
-  width: 45px;
-  border-radius: 12px;
-  background: var(--white);
-  border: 2px solid var(--whats-green);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.10);
-}
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 0.7rem;
-  margin-top: 0.6rem;
-  flex-wrap: wrap;
-}
-nav button {
-  background: var(--whats-green);
-  color: var(--whats-dark);
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      background-color: var(--bg-section);
+      border-bottom: 2px solid var(--highlight);
+    }
+
+    header img {
+      width: 50px;
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      color: var(--highlight);
+    }
+
+    header p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
+    main {
+      padding: 2rem 1rem;
+    }
+
+    section {
+      background-color: var(--bg-section);
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: var(--highlight);
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      margin: 1rem 0;
+      padding-left: 1.5rem;
+    }
+
+    ul li {
+      margin-bottom: 0.5rem;
+    }
+
+    .carousel {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    .carousel img {
+      max-width: 100%;
+      border-radius: var(--border-radius);
+    }
+
+    .carousel-controls {
+      margin-top: 1rem;
+    }
+
+    .carousel-controls button {
+      background: var(--highlight);
+      border: none;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      margin: 0 0.5rem;
+      font-size: 1.2rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .whatsapp-effect {
+      display: flex;
+      align-items: center;
+      background-color: #0b141a;
+      padding: 1rem;
+      border-radius: var(--border-radius);
+      margin: 1rem 0;
+    }
+
+    .whatsapp-effect img {
+      width: 40px;
+      margin-right: 1rem;
+    }
+
+    .whatsapp-msg {
+      color: var(--text-primary);
+    }
+
+   button.dica {
+  background-color: var(--button-bg);
+  color: var(--button-text);
   border: none;
-  font-weight: bold;
-  padding: 0.7rem 1.3rem;
-  border-radius: 25px;
-  font-size: 1rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: var(--border-radius);
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-  margin-bottom: 5px;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-nav button.active, nav button:hover {
-  background: var(--whats-mid);
-  color: var(--white);
-}
-main {
-  max-width: 900px;
-  margin: 2rem auto 2.5rem auto;
-  background: var(--white);
-  border-radius: 14px;
-  box-shadow: 0 4px 22px rgba(0,0,0,0.10);
-  padding: 2rem;
-}
-section {
-  margin-bottom: 2rem;
-  display: none;
-  animation: fadeIn 0.5s;
-}
-section.active { display: block; }
+  margin: 1rem auto 0; 
+  display: block;      
+   }
 
-h1 {
-  color: var(--whats-mid);
-  margin-top: 0;
-  margin-bottom: 1rem;
-  font-size: 2rem;
-}
-ul.checks {
-  list-style: none;
-  padding: 0;
-  margin: 1.2rem 0 2rem 0;
-}
-ul.checks li {
-  padding: 0.5rem 0 0.5rem 0.5rem;
-  font-size: 1.15rem;
-  border-left: 5px solid var(--whats-green);
-  margin-bottom: 0.4rem;
-}
+    .image-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
 
-.carousel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 2rem 0 1rem 0;
-}
-.carousel img {
-  max-width: 100%;
-  max-height: 250px;
-  border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(37,211,102,0.10);
-  border: 2px solid var(--whats-green);
-  background: var(--white);
-}
-.carousel-controls {
-  margin-top: 12px;
-  display: flex;
-  gap: 10px;
-}
-.carousel-controls button {
-  background: var(--whats-mid);
-  color: var(--white);
-  border: none;
-  border-radius: 50%;
-  width: 38px;
-  height: 38px;
-  font-size: 1.5rem;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.carousel-controls button:hover {
-  background: var(--whats-green);
-  color: var(--whats-dark);
-}
-#carousel-caption {
-  margin-top: 7px;
-  color: var(--whats-mid);
-  font-size: 1rem;
-}
+    .image-grid div {
+      flex: 1 1 150px;
+      max-width: 250px;
+      text-align: center;
+    }
 
-.whatsapp-bubble {
-  display: flex;
-  align-items: flex-start;
-  margin: 1.3rem 0 1.7rem 0;
-  position: relative;
-}
-.whats-icon {
-  width: 44px;
-  margin-right: 10px;
-  filter: drop-shadow(0 2px 4px rgba(30,150,50,0.20));
-}
-.whats-msg {
-  background: var(--whats-green);
-  color: var(--white);
-  padding: 0.95rem 1.3rem;
-  border-radius: 18px 18px 18px 4px;
-  font-size: 1.09rem;
-  min-width: 140px;
-  display: inline-block;
-  animation: floatMsg 1.1s;
-  box-shadow: 0 2px 8px rgba(37,211,102,0.08);
-}
-@keyframes floatMsg {
-  from { transform: translateY(35px) scale(0.85); opacity: 0;}
-  to { transform: none; opacity: 1;}
-}
+    .image-grid img {
+      width: 100%;
+      border-radius: var(--border-radius);
+    }
 
-.critica-list {
-  margin-bottom: 1.4rem;
-}
-.critica-item {
-  background: var(--gray);
-  padding: 0.85rem 1.1rem;
-  border-radius: 12px;
-  margin-bottom: 0.7rem;
-  font-size: 1.08rem;
-  border-left: 5px solid var(--whats-green);
-}
+    .quote-card {
+      background-color: #0b141a;
+      border-left: 4px solid #25D366;
+      padding: 1rem;
+      margin: 2rem 0;
+      border-radius: 8px;
+    }
 
-.tip-btn {
-  background: var(--whats-mid);
-  color: var(--white);
-  border: none;
-  border-radius: 22px;
-  padding: 0.7rem 1.5rem;
-  font-size: 1.08rem;
-  margin-top: 1rem;
-  margin-bottom: 0.4rem;
-  cursor: pointer;
-  transition: background 0.2s;
-  font-weight: bold;
-}
-.tip-btn:hover {
-  background: var(--whats-green);
-  color: var(--whats-dark);
-}
-.tip-box {
-  display: none;
-  background: var(--accent-yellow);
-  color: var(--whats-dark);
-  padding: 0.95rem 1.1rem;
-  border-radius: 14px;
-  margin-top: 0.8rem;
-  font-size: 1.08rem;
-  box-shadow: 0 1px 7px rgba(37,211,102,0.07);
-}
+    .quote-card p {
+      font-style: italic;
+    }
 
-.galeria {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  justify-content: center;
-}
-.img-card {
-  flex: 1 1 150px;
-  min-width: 140px;
-  max-width: 250px;
-  background: var(--gray);
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(37,211,102,0.10);
-  text-align: center;
-  margin-bottom: 10px;
-  display: flex;
-  flex-direction: column;
-}
-.img-card img {
-  width: 100%;
-  aspect-ratio: 4/3;
-  object-fit: cover;
-  background: var(--white);
-}
-.img-desc {
-  padding: 0.6rem;
-  font-size: 0.98rem;
-  color: var(--whats-dark);
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: var(--whats-dark);
-  color: var(--white);
-  font-size: 0.98rem;
-  border-top: 5px solid var(--whats-green);
-  margin-top: 2.2rem;
-}
-@media (max-width: 700px) {
-  main { padding: 1rem;}
-  .carousel img { max-height: 140px;}
-  .whats-icon { width: 34px;}
-  nav {flex-direction: column;}
-  nav button { width: 100%; min-width: 120px; }
-  h1 { font-size: 1.26rem;}
-  .img-card { min-width: 120px; max-width: 100%;}
-}
+    footer {
+      text-align: center;
+      padding: 1rem;
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      background-color: #0b141a;
+    }

@@ -1,77 +1,33 @@
-const navBtns = document.querySelectorAll('nav button');
-const sections = document.querySelectorAll('main section');
-navBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    navBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    sections.forEach(sec => sec.classList.remove('active'));
-    document.getElementById(btn.dataset.section).classList.add('active');
-  });
-});
+ const images = [
+      {
+        src: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80",
+        caption: "Mãos de diferentes culturas unidas pelo mundo."
+      },
+      {
+        src: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=600&q=80",
+        caption: "Tecnologia conectando povos de diferentes regiões."
+      },
+      {
+        src: "https://images.unsplash.com/photo-1521790363533-808c3e5f6f3c?auto=format&fit=crop&w=600&q=80",
+        caption: "Diversidade cultural fortalecida pela conexão global."
+      }
+    ];
 
-const carouselImgs = [
-  {
-    src: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80",
-    caption: "Mãos de diferentes culturas unidas pelo mundo."
-  },
-  {
-    src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
-    caption: "Conexão digital: todos ligados na mesma rede."
-  },
-  {
-    src: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
-    caption: "Diversidade cultural e respeito mútuo."
-  }
-];
-let carouselIndex = 0;
-function updateCarousel() {
-  document.getElementById('carousel-img').src = carouselImgs[carouselIndex].src;
-  document.getElementById('carousel-caption').textContent = carouselImgs[carouselIndex].caption;
-}
-document.getElementById('prev-img').onclick = function() {
-  carouselIndex = (carouselIndex - 1 + carouselImgs.length) % carouselImgs.length;
-  updateCarousel();
-};
-document.getElementById('next-img').onclick = function() {
-  carouselIndex = (carouselIndex + 1) % carouselImgs.length;
-  updateCarousel();
-};
-const carouselEl = document.getElementById('carousel-img');
-let startX = 0;
-carouselEl.addEventListener('touchstart', e => {
-  startX = e.touches[0].clientX;
-});
-carouselEl.addEventListener('touchend', e => {
-  let dx = e.changedTouches[0].clientX - startX;
-  if (dx > 40) document.getElementById('prev-img').click();
-  else if (dx < -40) document.getElementById('next-img').click();
-});
+    let currentIndex = 0;
+    const carouselImg = document.getElementById("carousel-img");
+    const carouselCaption = document.getElementById("carousel-caption");
 
-const whatsMsgs = [
-  "Nem tudo que viraliza é verdade!",
-  "Desconfie de correntes suspeitas.",
-  "Verifique sempre a fonte antes de compartilhar.",
-  "Redes sociais: use com consciência!",
-  "Proteja sua privacidade online.",
-  "Cuidado com notícias emocionais demais.",
-  "Compartilhe responsabilidade, não fake news!"
-];
-function trocaMensagemWhats() {
-  const msgDiv = document.getElementById('whats-msg');
-  let idx = Math.floor(Math.random() * whatsMsgs.length);
-  msgDiv.textContent = whatsMsgs[idx];
-}
-setInterval(trocaMensagemWhats, 3200);
+    document.getElementById("next-img").addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateCarousel();
+    });
 
-function showTip() {
-  const tip = document.getElementById('tip-box');
-  if (tip.style.display === "block") {
-    tip.style.display = "none";
-  } else {
-    tip.style.display = "block";
-    setTimeout(()=>{ tip.style.display = "none"; }, 6000);
-  }
-}
-window.showTip = showTip; 
+    document.getElementById("prev-img").addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateCarousel();
+    });
 
-updateCarousel();
+    function updateCarousel() {
+      carouselImg.src = images[currentIndex].src;
+      carouselCaption.textContent = images[currentIndex].caption;
+    }
